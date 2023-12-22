@@ -211,7 +211,7 @@
 
 (character_literal) @character
 
-(string_literal (string_content)) @string
+(string_literal (string_start) (string_content) (string_end)) @string
 
 (character_escape_seq) @string.escape
 
@@ -219,7 +219,7 @@
 ;    - "[abc]?".toRegex()
 (call_expression
 	(navigation_expression
-		((string_literal (string_content)) @string.regex)
+		((string_literal (string_start) (string_content) (string_end)) @string.regex)
 		(navigation_suffix
 			((simple_identifier) @_function
 			(#eq? @_function "toRegex")))))
@@ -231,7 +231,7 @@
 	(call_suffix
 		(value_arguments
 			(value_argument
-				(string_literal (string_content)) @string.regex))))
+				(string_literal (string_start) (string_content) (string_end)) @string.regex))))
 
 ;   - Regex.fromLiteral("[abc]?")
 (call_expression
@@ -244,7 +244,7 @@
 	(call_suffix
 		(value_arguments
 			(value_argument
-				(string_literal (string_content)) @string.regex))))
+				(string_literal (string_start) (string_content) (string_end)) @string.regex))))
 
 ;;; Keywords
 

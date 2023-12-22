@@ -81,7 +81,7 @@ fun foo():String
     body: (function_body
       (statements
         (jump_expression
-          (string_literal (string_content)))))))
+          (string_literal (string_start) (string_content) (string_end)))))))
 
 ================================================================================
 Colon after newline

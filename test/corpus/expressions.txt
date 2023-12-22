@@ -77,7 +77,7 @@ sum(1, 2)
       (value_arguments
         (value_argument
           (string_literal 
-            (string_content))))))
+            (string_start) (string_content) (string_end))))))
   (call_expression
     (simple_identifier)
     (call_suffix
@@ -163,7 +163,7 @@ val MyDate.s: String get() = "hello"
         (type_identifier)))
     getter: (getter
       (function_body
-        (string_literal (string_content))))))
+        (string_literal (string_start) (string_content) (string_end))))))
 
 ================================================================================
 Expect as an expression
@@ -430,7 +430,7 @@ val comments = """ // and here """
       (call_suffix
         (value_arguments
           (value_argument
-            (string_literal (string_content)))))))
+            (string_literal (string_start) (string_content) (string_end)))))))
   (property_declaration
     variable: (variable_declaration
       (simple_identifier))
@@ -439,7 +439,7 @@ val comments = """ // and here """
       (call_suffix
         (value_arguments
           (value_argument
-            (string_literal (string_content)))))))
+            (string_literal (string_start) (string_content) (string_end)))))))
   (property_declaration
     variable: (variable_declaration
       (simple_identifier))
@@ -448,7 +448,7 @@ val comments = """ // and here """
       (call_suffix
         (value_arguments
           (value_argument
-            (string_literal (string_content)))))))
+            (string_literal (string_start) (string_content) (string_end)))))))
   (property_declaration
     variable: (variable_declaration
       (simple_identifier))
@@ -457,15 +457,15 @@ val comments = """ // and here """
       (call_suffix
         (value_arguments
           (value_argument
-            (string_literal (string_content)))))))
+            (string_literal (string_start) (string_content) (string_end)))))))
   (property_declaration
     variable: (variable_declaration
       (simple_identifier))
-    expression: (string_literal (string_content)))
+    expression: (string_literal (string_start) (string_content) (string_end)))
   (property_declaration
     variable: (variable_declaration
       (simple_identifier))
-    expression: (string_literal (string_content))))
+    expression: (string_literal (string_start) (string_content) (string_end))))
 
 ================================================================================
 Qualified this/super expressions

@@ -46,8 +46,16 @@ string.
 --------------------------------------------------------------------------------
 
 (source_file
-  (string_literal (string_content))
-  (string_literal (string_content) (string_content) (string_content)))
+  (string_literal
+    (string_start)
+    (string_content)
+    (string_end))
+  (string_literal
+    (string_start)
+    (string_content)
+    (string_content)
+    (string_content)
+    (string_end)))
 
 ================================================================================
 String literal with lots of repeated quotes
@@ -59,15 +67,17 @@ There's a lot of ""quotations"". Even at the "end""""
 --------------------------------------------------------------------------------
 
 (source_file
-  (string_literal 
-    (string_content) 
+  (string_literal
+    (string_start)
     (string_content)
     (string_content)
     (string_content)
     (string_content)
     (string_content)
     (string_content)
-    (string_content)))
+    (string_content)
+    (string_content)
+    (string_end)))
 
 ================================================================================
 String interpolation
@@ -84,23 +94,33 @@ ${"""string interpolation"""} $literal
 
 (source_file
   (string_literal
+    (string_start)
     (string_content)
     (interpolated_identifier)
-    (string_content))
+    (string_content)
+    (string_end))
   (string_literal
+    (string_start)
     (string_content)
     (interpolated_expression
       (string_literal
-        (string_content)))
-    (string_content))
+        (string_start)
+        (string_content)
+        (string_end)))
+    (string_content)
+    (string_end))
   (string_literal
+    (string_start)
     (string_content)
     (interpolated_expression
       (string_literal
-        (string_content)))
+        (string_start)
+        (string_content)
+        (string_end)))
     (string_content)
     (interpolated_identifier)
-    (string_content)))
+    (string_content)
+    (string_end)))
 
 ================================================================================
 More string interpolation
@@ -115,18 +135,26 @@ More string interpolation
 
 (source_file
   (string_literal
-    (string_content))
+    (string_start)
+    (string_content)
+    (string_end))
   (string_literal
+    (string_start)
     (string_content)
-    (string_content))
+    (string_content)
+    (string_end))
   (string_literal
+    (string_start)
     (string_content)
     (string_content)
     (string_content)
     (string_content)
-    (string_content))
+    (string_content)
+    (string_end))
   (string_literal
-    (string_content)))
+    (string_start)
+    (string_content)
+    (string_end)))
 
 ================================================================================
 Integer literals
@@ -180,11 +208,11 @@ assertEquals("\u214E\uA7B5\u2CEF", "\u2132\uA7B4\u2CEF".lowercase())
     (call_suffix
       (value_arguments
         (value_argument
-          (string_literal (string_content)))
+          (string_literal (string_start) (string_content) (string_end)))
         (value_argument
           (call_expression
             (navigation_expression
-              (string_literal (string_content))
+              (string_literal (string_start) (string_content) (string_end))
               (navigation_suffix
                 (simple_identifier)))
             (call_suffix
