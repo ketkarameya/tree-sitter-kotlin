@@ -116,8 +116,8 @@ module.exports = grammar({
     $._import_list_delimiter,
     $.safe_nav,
     $.multiline_comment,
-    $._string_start,
-    $._string_end,
+    $.string_start,
+    $.string_end,
     $.string_content,
   ],
 
@@ -764,9 +764,9 @@ module.exports = grammar({
     ),
 
     string_literal: $ => seq(
-      $._string_start,
+      $.string_start,
       repeat(choice($.string_content, $._interpolation)),
-      $._string_end,
+      $.string_end,
     ),
 
     line_string_expression: $ => seq("${", $._expression, "}"),

@@ -4057,7 +4057,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_string_start"
+          "name": "string_start"
         },
         {
           "type": "REPEAT",
@@ -4077,7 +4077,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_string_end"
+          "name": "string_end"
         }
       ]
     },
@@ -6659,11 +6659,11 @@
     },
     {
       "type": "SYMBOL",
-      "name": "_string_start"
+      "name": "string_start"
     },
     {
       "type": "SYMBOL",
-      "name": "_string_end"
+      "name": "string_end"
     },
     {
       "type": "SYMBOL",

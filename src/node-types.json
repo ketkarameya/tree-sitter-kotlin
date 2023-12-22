@@ -8245,7 +8245,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "interpolated_expression",
@@ -8257,6 +8257,14 @@
         },
         {
           "type": "string_content",
+          "named": true
+        },
+        {
+          "type": "string_end",
+          "named": true
+        },
+        {
+          "type": "string_start",
           "named": true
         }
       ]
@@ -10039,6 +10047,14 @@
   },
   {
     "type": "string_content",
+    "named": true
+  },
+  {
+    "type": "string_end",
+    "named": true
+  },
+  {
+    "type": "string_start",
     "named": true
   },
   {
